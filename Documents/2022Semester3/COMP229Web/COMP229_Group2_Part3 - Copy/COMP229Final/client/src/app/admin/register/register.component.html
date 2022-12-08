@@ -1,0 +1,66 @@
+<main class="container">
+  <!-- Message Area -->
+  <div *ngIf="messages" class="alert alert-danger">{{ messages }}</div>
+  <div class="row">
+    <div class="col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-sm-8 offset-sm-1">
+      <h1 class="display-4">Please Register </h1>
+      <form method="POST" autocomplete="off" #form = 'ngForm' (ngSubmit)='authenticate(form)'>
+        <fieldset class="form-group">
+          <label>Username: </label>
+          <input
+            type="text"
+            class="form-control"
+            name="username"
+            placeholder="Enter username"
+            [(ngModel)]="user.username"
+            required
+            autofocus
+          />
+        </fieldset>
+
+        <fieldset class="form-group">
+          <label for="password">Password: </label>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            placeholder="Enter password"
+            [(ngModel)]="user.password"
+            required
+          />
+        </fieldset>
+
+        <fieldset class="form-group">
+          <label for="email">Email: </label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            placeholder="Enter Email Address"
+            [(ngModel)]="user.email"
+            required
+          />
+        </fieldset>
+
+        <fieldset class="form-group">
+          <label for="displayName">Display Name: </label>
+          <input
+            type="text"
+            class="form-control"
+            name="displayName"
+            placeholder="Enter Display Name"
+            [(ngModel)]="user.displayName"
+            required
+          />
+        </fieldset>
+
+        <fieldset class="form-group text-right">
+          <input type="submit" class="btn btn-success" value="Register" />
+          <a href="/">
+            <input type="button" class="btn btn-warning" value="Cancel" />
+          </a>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</main>

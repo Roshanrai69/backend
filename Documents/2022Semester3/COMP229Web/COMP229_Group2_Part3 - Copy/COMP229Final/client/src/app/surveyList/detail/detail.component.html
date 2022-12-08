@@ -1,0 +1,93 @@
+<!-- Content for the Create Survey page -->
+<div class="container">
+    <!-- <h1 class="text-center">{{ title }}</h1> -->
+  
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="bs-component">
+          <form class="form" method="POST">
+            <br /><br />
+            <div class="form-group">
+              <label for="nameTextField">Survey Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nameTextField"
+                placeholder="Enter the survey Name"
+                name="name"
+                required
+              />
+            </div>
+  
+            <div class="form-group">
+              <label for="q1TextField">Question 1</label>
+              <input
+                type="text"
+                class="form-control"
+                id="q1TextField"
+                placeholder="Enter Question 2"
+                name="q1"
+                required
+              />
+            </div>
+  
+            <div class="form-group">
+              <label for="q2TextField">Question 2</label>
+              <input
+                type="text"
+                class="form-control"
+                id="q2TextField"
+                placeholder="Enter Question 2"
+                name="q2"
+                required
+              />
+            </div>
+  
+            <div class="form-group">
+              <label for="q3TextField">Question 3</label>
+              <input
+                type="text"
+                class="form-control"
+                id="q3TextField"
+                placeholder="Enter Question 3"
+                name="q3"
+                required
+              />
+            </div>
+  
+            <div class="form-group">
+              <label for="q4TextField">Question 4</label>
+              <input
+                type="text"
+                class="form-control"
+                id="q4TextField"
+                placeholder="Enter Question 4"
+                name="q4"
+                required
+              />
+            </div>
+  
+            <div class="form-group">
+              <label for="q5TextField">Question 5</label>
+              <input
+                type="text"
+                class="form-control"
+                id="q5TextField"
+                placeholder="Enter Question 5"
+                name="q5"
+                required
+              />
+            </div>
+  
+            <button class="btn btn-primary" type="submit">
+              <i class="fas fa-edit"></i> Submit
+            </button>
+  
+            <a href="/surveylist" class="btn btn-warning">
+              <i class="fas fa-undo"></i> Cancel</a>
+  
+            <br /><br /><br /><br />
+          </form>
+        </div>
+      </div>
+    </div>

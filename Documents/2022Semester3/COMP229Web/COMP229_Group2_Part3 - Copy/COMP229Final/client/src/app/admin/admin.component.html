@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <div class="row"></div>
+
+  <div class="row mt-2">
+    <div class="col-3">
+      <button class="btn btn-outline-info btn-block"
+        routerLink='/admin/main/books'
+        routerLinkActive='active'>
+        Existing Survey
+      </button>
+
+      <button class="btn btn-outline-info btn-block"
+        routerLink='/admin/main/orders'
+        routerLinkActive='active'>
+        Completed Survey
+      </button>
+    </div>
+
+    <div class="col-9">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

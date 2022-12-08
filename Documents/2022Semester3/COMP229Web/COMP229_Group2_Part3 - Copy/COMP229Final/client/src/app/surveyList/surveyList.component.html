@@ -1,0 +1,70 @@
+<!-- Survey List content -->
+<main class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="bs-component">
+        <h1 class="text-center">{{ title }}</h1>
+        <a *ngIf="user"
+          href="/surveylist/add"
+          class="btn btn-primary btn-block"
+          role="button"
+        >
+          <i class="fas fa-plus-circle text-center"> Create a Survey</i>
+        </a>
+        <br />
+        <table class="table table-bordered table-striped table-hover">
+          <!-- Heading Row-->
+          <tr *ngIf="user" class="d-flex">
+            <th class="text-align: left col-6">Active Survey Name</th>
+            <th class="text-center col-2"></th>
+            <th class="text-center col-2"></th>
+            <th class="text-center col-2"></th>
+          </tr>
+          <tr *ngIf="!(user)" class="d-flex">
+            <th class="text-align: left col-6">Active Survey Name</th>
+            <th class="text-center col-6"></th>
+          </tr>
+
+          <!-- Repeatable Templete Row-->
+
+          <tr *ngFor="let survey of surveyList" class="d-flex">
+            <td class="text-align: left col-6">
+              {{ survey.name }}
+            </td>
+            <td *ngIf="user" class="text-center col-2">
+              <a [routerLink]="['/surveylist/fill/', survey._id]"
+                href=""
+                class="btn btn-primary btn-sm"
+              >
+                <i class="far fa-comment-alt"></i> Take Survey</a
+              >
+            </td>
+            <td *ngIf="user" class="text-center col-2">
+              <a  *ngIf="user.displayName === survey.OwnerName"
+              [routerLink]="['/surveylist/edit/', survey._id]"
+                class="btn btn-warning btn-sm"
+              >
+                <i class="fas fa-pencil-alt"></i> Edit Survey</a
+              >
+            </td>
+            <td *ngIf="user" class="text-center col-2">
+              <a *ngIf="user.displayName === survey.OwnerName" (click)="deleteSurvey(survey)"
+                class="btn btn-danger btn-sm"
+              >
+                <i class="fas fa-trash-alt"></i> Delete Survey</a
+              >
+            </td>
+            
+            <td *ngIf="!(user)" class="text-center col-6">
+              <a [routerLink]="['/surveylist/fill/', survey._id]"
+                class="btn btn-primary btn-sm"
+              >
+                <i class="far fa-comment-alt"></i> Take Survey</a
+              >
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
